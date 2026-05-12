@@ -11,3 +11,5 @@
 Odoo permite personalizar etiquetas que en este caso serian facturas, recibos...
 
 A diferencia de otras aplicaciones no requiere suscripciones caras, no necesita una infraestructura avanzada y puede desplegarse en servidores cloud
+
+A parte tiene una arquitectura de OpenSource
