@@ -49,7 +49,89 @@ Contable: Puede mirar facturas pero no puede modificar el stock
 ## 1. Siguiendo la norma ISO/IEC 26514, redacta un breve Manual de Despliegue para que el responsable de IT de la empresa pueda levantar el sistema en caso de caída. Debe incluir:
 
 El fragmento de docker-compose.yml necesario.
-  
+
+# Versión de Docker Compose utilizada
+version: '3.9'
+
+services:
+
+  # Servicio de base de datos PostgreSQL
+  db:
+
+    # Imagen oficial de PostgreSQL versión 15
+    image: postgres:15
+
+    # Nombre personalizado del contenedor
+    container_name: odoo-db
+
+    # Reinicia automáticamente el contenedor si falla
+    restart: always
+
+    # Variables de entorno para configurar PostgreSQL
+    environment:
+
+      # Nombre de la base de datos
+      POSTGRES_DB: odoo
+
+      # Usuario administrador de PostgreSQL
+      POSTGRES_USER: odoo
+
+      # Contraseña del usuario PostgreSQL
+      POSTGRES_PASSWORD: odoo_password
+
+    # Volumen persistente para no perder los datos
+    # aunque el contenedor se elimine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # Servicio principal de Odoo
+  odoo:
+
+    # Imagen oficial de Odoo versión 17
+    image: odoo:17
+
+    # Nombre personalizado del contenedor
+    container_name: odoo-app
+
+    # Reinicio automático en caso de fallo
+    restart: always
+
+    # Odoo depende de PostgreSQL para funcionar
+    depends_on:
+      - db
+
+    # Puerto publicado:
+    # Puerto 8069 del servidor → Puerto 8069 del contenedor
+    ports:
+      - "8069:8069"
+
+    # Variables de conexión con PostgreSQL
+    environment:
+
+      # Nombre del host del contenedor PostgreSQL
+      HOST: db
+
+      # Usuario de la base de datos
+      USER: odoo
+
+      # Contraseña del usuario PostgreSQL
+      PASSWORD: odoo_password
+
+    # Volumen persistente para conservar
+    # archivos y configuraciones de Odoo
+    volumes:
+      - odoo_data:/var/lib/odoo
+
+# Declaración de volúmenes persistentes
+volumes:
+
+  # Volumen para PostgreSQL
+  postgres_data:
+
+  # Volumen para Odoo
+  odoo_data:
+
+
 El comando para realizar un backup de la base de datos PostgreSQL.
 
 
