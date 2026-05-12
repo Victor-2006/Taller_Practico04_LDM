@@ -25,3 +25,16 @@ A parte tiene una arquitectura de OpenSource
 Cada desarrollador cobraria 40 € la hora sumando un total de 1.333 € cada uno para llegar a las 100 h entre los 3 desarrolladores
 
 ## Coste operativo (Hosting en Google Cloud, AWS, Huawei Cloud o similar).
+
+
+# Bloque B: Diseño de Seguridad RBAC (CE f)
+
+## 1. Diseña la matriz de permisos para los siguientes roles, asegurando el Principio de Mínimo Privilegio:
+
+Administrador: Acceso total.
+
+Comercial: Solo ve sus clientes y presupuestos (Record Rules).
+
+Operario de Almacén: Solo ve stock y albaranes de entrada/salida.
+
+Contable: Puede mirar facturas pero no puede modificar el stock
