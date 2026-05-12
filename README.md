@@ -33,7 +33,7 @@ Elegimos Google Cloud porque asumimos costes mínimos comparados con las demás 
 
 # Bloque B: Diseño de Seguridad RBAC (CE f)
 
-## 1. Diseña la matriz de permisos para los siguientes roles, asegurando el Principio de Mínimo Privilegio:
+# 1. Diseña la matriz de permisos para los siguientes roles, asegurando el Principio de Mínimo Privilegio:
 <img width="606" height="408" alt="image" src="https://github.com/user-attachments/assets/c7a55dcc-3039-4565-9bb6-36605ff54485" />
 
 Administrador: Acceso total.
@@ -46,15 +46,13 @@ Contable: Puede mirar facturas pero no puede modificar el stock
 
 
 # Bloque C: Documentación de Explotación (CE i)
-## 1. Siguiendo la norma ISO/IEC 26514, redacta un breve Manual de Despliegue para que el responsable de IT de la empresa pueda levantar el sistema en caso de caída. Debe incluir:
+# 1. Siguiendo la norma ISO/IEC 26514, redacta un breve Manual de Despliegue para que el responsable de IT de la empresa pueda levantar el sistema en caso de caída. Debe incluir:
 
-El fragmento de docker-compose.yml necesario.
+## El fragmento de docker-compose.yml necesario.
 
+<img width="1051" height="818" alt="image" src="https://github.com/user-attachments/assets/49997fa8-30f5-4f8c-bf73-8dfd721cabbb" />
 
-
-
-El comando para realizar un backup de la base de datos PostgreSQL.
-
+## El comando para realizar un backup de la base de datos PostgreSQL.
 
 MANUAL PARA RECUPERAR EL SISTEMA:
 1- Tener previamente Docker y Docker compose
