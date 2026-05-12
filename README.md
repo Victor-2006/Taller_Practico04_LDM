@@ -8,7 +8,7 @@
 
 ## 1. Justifica la elección basándote en el perfil de la empresa (25 empleados, presupuesto ajustado, necesidad de personalización en el etiquetado).
 
-  Elegimos Odoo ya que tiene un precio bastante asequible para una empresa de pocos empleados que en este caso es de 25, permite comenzar con modulos basicos y luego se pueden ir ampliando funcionalidades.
+ Elegimos Odoo ya que tiene un precio bastante asequible para una empresa de pocos empleados que en este caso es de 25, permite comenzar con modulos basicos y luego se pueden ir ampliando funcionalidades.
 
 Odoo permite personalizar etiquetas que en este caso serian facturas, recibos...
 
