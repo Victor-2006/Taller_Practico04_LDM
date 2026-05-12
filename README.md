@@ -49,7 +49,46 @@ Contable: Puede mirar facturas pero no puede modificar el stock
 ## 1. Siguiendo la norma ISO/IEC 26514, redacta un breve Manual de Despliegue para que el responsable de IT de la empresa pueda levantar el sistema en caso de caída. Debe incluir:
 
 El fragmento de docker-compose.yml necesario.
+version: '3.9'
 
+services:
+
+  db:
+    image: postgres:15
+    container_name: odoo-db
+    restart: always
+
+    environment:
+      POSTGRES_DB: odoo
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: odoo_password
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  odoo:
+    image: odoo:17
+    container_name: odoo-app
+    restart: always
+
+    depends_on:
+      - db
+
+    ports:
+      - "8069:8069"
+
+    environment:
+      HOST: db
+      USER: odoo
+      PASSWORD: odoo_password
+
+    volumes:
+      - odoo_data:/var/lib/odoo
+
+volumes:
+  postgres_data:
+  odoo_data:
+  
 El comando para realizar un backup de la base de datos PostgreSQL.
 
 
