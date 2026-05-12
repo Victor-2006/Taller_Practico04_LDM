@@ -50,85 +50,93 @@ Contable: Puede mirar facturas pero no puede modificar el stock
 
 El fragmento de docker-compose.yml necesario.
 
-# Versión de Docker Compose utilizada
-version: '3.9'
+    services:
 
-services:
+    # Servicio principal de Odoo
+    odoo:
 
-  # Servicio de base de datos PostgreSQL
-  db:
+    # Imagen oficial de Odoo
+    image: odoo:latest
 
-    # Imagen oficial de PostgreSQL versión 15
-    image: postgres:15
+    # Nombre del contenedor
+    container_name: odoo
 
-    # Nombre personalizado del contenedor
-    container_name: odoo-db
+    # Reinicio automático si falla
+    restart: unless-stopped
 
-    # Reinicia automáticamente el contenedor si falla
-    restart: always
-
-    # Variables de entorno para configurar PostgreSQL
-    environment:
-
-      # Nombre de la base de datos
-      POSTGRES_DB: odoo
-
-      # Usuario administrador de PostgreSQL
-      POSTGRES_USER: odoo
-
-      # Contraseña del usuario PostgreSQL
-      POSTGRES_PASSWORD: odoo_password
-
-    # Volumen persistente para no perder los datos
-    # aunque el contenedor se elimine
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-
-  # Servicio principal de Odoo
-  odoo:
-
-    # Imagen oficial de Odoo versión 17
-    image: odoo:17
-
-    # Nombre personalizado del contenedor
-    container_name: odoo-app
-
-    # Reinicio automático en caso de fallo
-    restart: always
-
-    # Odoo depende de PostgreSQL para funcionar
+    # Odoo depende de PostgreSQL
     depends_on:
       - db
 
-    # Puerto publicado:
-    # Puerto 8069 del servidor → Puerto 8069 del contenedor
+    # Puerto 8200 del host → 8069 del contenedor
     ports:
-      - "8069:8069"
+      - "8200:8069"
 
-    # Variables de conexión con PostgreSQL
+    volumes:
+
+      # Guarda datos persistentes de Odoo
+      - odoo-data:/var/lib/odoo
+
+      # Carpeta de configuración
+      - ./config:/etc/odoo
+
+      # Carpeta para módulos personalizados
+      - ./addons:/mnt/extra-addons
+
     environment:
 
-      # Nombre del host del contenedor PostgreSQL
-      HOST: db
+      # Host de la base de datos
+      - HOST=db
 
-      # Usuario de la base de datos
-      USER: odoo
+      # Usuario PostgreSQL
+      - USER=odoo
 
-      # Contraseña del usuario PostgreSQL
-      PASSWORD: odoo_password
+      # Contraseña PostgreSQL
+      - PASSWORD=odoo
 
-    # Volumen persistente para conservar
+    # Comando de inicio de Odoo
+    command: odoo -d odoo --db_user=odoo --db_password=odoo -i base --addons-path=/mnt/extra-addons
+
+    # Servicio PostgreSQL
+    db:
+
+    # Imagen oficial PostgreSQL 16
+    image: postgres:16.0
+
+    # Nombre del contenedor
+    container_name: db
+
+    # Reinicio automático
+    restart: unless-stopped
+
+    environment:
+
+      # Nombre de la base de datos
+      - POSTGRES_DB=odoo
+
+      # Contraseña PostgreSQL
+      - POSTGRES_PASSWORD=odoo
+
+      # Usuario PostgreSQL
+      - POSTGRES_USER=odoo
+
+      # Ruta interna de almacenamiento
+      - PGDATA=/var/lib/postgresql/data/pgdata
+
     volumes:
-      - odoo_data:/var/lib/odoo
 
-    # Declaración de volúmenes persistentes
-volumes:
+      # Volumen persistente de PostgreSQL
+      - db-data:/var/lib/postgresql/data
 
-     # Volumen para PostgreSQL
-  postgres_data:
+      # Volúmenes persistentes
+    volumes:
 
-    # Volumen para Odoo
-  odoo_data:
+    # Datos de Odoo
+    odoo-data:
+
+    # Datos PostgreSQL
+    db-data:
+
 
 
 El comando para realizar un backup de la base de datos PostgreSQL.
