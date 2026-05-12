@@ -55,6 +55,7 @@ El fragmento de docker-compose.yml necesario.
 
 El comando para realizar un backup de la base de datos PostgreSQL.
 
+docker exec -t db pg_dump -U odoo odoo > backup_odoo.sql 
 
 
 
