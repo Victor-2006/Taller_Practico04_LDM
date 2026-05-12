@@ -118,17 +118,16 @@ services:
       PASSWORD: odoo_password
 
     # Volumen persistente para conservar
-    # archivos y configuraciones de Odoo
     volumes:
       - odoo_data:/var/lib/odoo
 
-# Declaración de volúmenes persistentes
+    # Declaración de volúmenes persistentes
 volumes:
 
-  # Volumen para PostgreSQL
+     # Volumen para PostgreSQL
   postgres_data:
 
-  # Volumen para Odoo
+    # Volumen para Odoo
   odoo_data:
 
 
