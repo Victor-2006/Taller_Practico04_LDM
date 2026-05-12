@@ -25,6 +25,3 @@ A parte tiene una arquitectura de OpenSource
 Cada desarrollador cobraria 40 € la hora sumando un total de 1.333 € cada uno para llegar a las 100 h entre los 3 desarrolladores
 
 ## Coste operativo (Hosting en Google Cloud, AWS, Huawei Cloud o similar).
-
-
-
