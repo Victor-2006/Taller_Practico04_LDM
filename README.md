@@ -56,9 +56,13 @@ Contable: Puede mirar facturas pero no puede modificar el stock
 
 MANUAL PARA RECUPERAR EL SISTEMA:
 1- Tener previamente Docker y Docker compose
+
 2- Guarda el docker-compose.yml  y ejecuta docker-compose up -d en CMD
+
 3- accede al localhost: 8200
+
 4-docker exec -t db pg_dump -U odoo odoo > backup_odoo.sql 
+
 5- cat backup_odoo.sql | docker exec -i db psql -U odoo odoo
 
 
