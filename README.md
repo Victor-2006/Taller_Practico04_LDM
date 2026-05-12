@@ -41,3 +41,13 @@ Comercial: Solo ve sus clientes y presupuestos (Record Rules).
 Operario de Almacén: Solo ve stock y albaranes de entrada/salida.
 
 Contable: Puede mirar facturas pero no puede modificar el stock
+
+
+# Bloque C: Documentación de Explotación (CE i)
+Siguiendo la norma ISO/IEC 26514, redacta un breve Manual de Despliegue para que el responsable de IT de la empresa pueda levantar el sistema en caso de caída. Debe incluir:
+
+El fragmento de docker-compose.yml necesario.
+
+El comando para realizar un backup de la base de datos PostgreSQL.
+
+
