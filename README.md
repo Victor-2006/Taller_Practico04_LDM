@@ -32,6 +32,7 @@ Cada desarrollador cobraria 40 € la hora sumando un total de 1.333 € cada un
 # Bloque B: Diseño de Seguridad RBAC (CE f)
 
 ## 1. Diseña la matriz de permisos para los siguientes roles, asegurando el Principio de Mínimo Privilegio:
+<img width="606" height="408" alt="image" src="https://github.com/user-attachments/assets/c7a55dcc-3039-4565-9bb6-36605ff54485" />
 
 Administrador: Acceso total.
 
