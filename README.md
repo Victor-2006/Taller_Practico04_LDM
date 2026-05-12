@@ -1,3 +1,5 @@
+# Victor Sánchez, Guillermo Sánchez, Diego González
+
 # Taller_Practico04_LDM
 
 # Propuesta tecnica
