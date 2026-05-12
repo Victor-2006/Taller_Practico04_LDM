@@ -13,3 +13,9 @@ Odoo permite personalizar etiquetas que en este caso serian facturas, recibos...
 A diferencia de otras aplicaciones no requiere suscripciones caras, no necesita una infraestructura avanzada y puede desplegarse en servidores cloud
 
 A parte tiene una arquitectura de OpenSource
+
+## 2. Cálculo de TCO: Realiza una estimación a 3 años. No olvidéis incluir:
+Coste de licencias/suscripción.
+Coste de implantación (vuestras horas de desarrollo: estima 100h a 40€/h).
+Coste operativo (Hosting en Google Cloud, AWS, Huawei Cloud o similar).
+
