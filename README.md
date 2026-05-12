@@ -28,6 +28,8 @@ Cada desarrollador cobraria 40 € la hora sumando un total de 1.333 € cada un
 
 ## Coste operativo (Hosting en Google Cloud, AWS, Huawei Cloud o similar).
 
+Elegimos Google Cloud porque asumimos costes mínimos comparados con las demás suscripciones disponibles. Además, tiene un tiempo de lanzamiento más rápido, mayor flexibilidad y escalabilidad, ahorro de costes y seguridad avanzada.
+
 
 # Bloque B: Diseño de Seguridad RBAC (CE f)
 
