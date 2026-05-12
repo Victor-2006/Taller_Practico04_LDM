@@ -20,11 +20,11 @@ A parte tiene una arquitectura de OpenSource
 
 <img width="1904" height="944" alt="image" src="https://github.com/user-attachments/assets/9f6de24b-7b29-478f-9f71-dda0195afdbe" />
 
-
 ## Coste de implantación (vuestras horas de desarrollo: estima 100h a 40€/h).
 
-## Coste operativo (Hosting en Google Cloud, AWS, Huawei Cloud o similar).
+Cada desarrollador cobraria 40 € la hora sumando un total de 1.333 € cada uno para llegar a las 100 h entre los 3 desarrolladores
 
+## Coste operativo (Hosting en Google Cloud, AWS, Huawei Cloud o similar).
 
 
 
