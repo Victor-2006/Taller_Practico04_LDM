@@ -18,9 +18,13 @@ A parte tiene una arquitectura de OpenSource
 
 ## Coste de licencias/suscripción.
 
+<img width="1904" height="944" alt="image" src="https://github.com/user-attachments/assets/9f6de24b-7b29-478f-9f71-dda0195afdbe" />
+
+
 ## Coste de implantación (vuestras horas de desarrollo: estima 100h a 40€/h).
 
 ## Coste operativo (Hosting en Google Cloud, AWS, Huawei Cloud o similar).
+
 
 
 
